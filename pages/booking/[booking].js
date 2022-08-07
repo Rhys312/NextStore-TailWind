@@ -63,6 +63,7 @@ const Booking = () => {
         </form>
       </div>
       <img
+        alt=""
         className="z-[1] absolute top-0 h-[100vh] w-screen"
         src="https://cdna.artstation.com/p/assets/images/images/039/267/040/large/jitendra-pathak-illustrator-vector-art-design-illustration.jpg?1625426605"
       />

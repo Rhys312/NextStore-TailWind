@@ -17,7 +17,6 @@ const Thumbnail = ({ onShow, movie }) => {
       }&language=en-US&append_to_response=videos`
     ).then((res) => res.json());
 
-
     thumbnailCtx.title = data.original_title || data.original_name;
     thumbnailCtx.id = data.id;
 
@@ -39,6 +38,7 @@ const Thumbnail = ({ onShow, movie }) => {
       className=" cursor-pointer hover:z-[500] relative flex h-28 min-w-[180px] hover:scale-125 hover:overflow-visible object-cover transition-all duration-200 hover:shadow-xl "
     >
       <Image
+        alt=""
         src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
         layout="fill"
       />

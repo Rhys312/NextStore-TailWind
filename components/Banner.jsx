@@ -13,6 +13,7 @@ const Banner = ({ netflixOriginals }) => {
   return (
     <div className="relative -z-10 w-screen h-[85vh] flex overflow-hidden object-cover">
       <Image
+        alt=""
         layout="fill"
         src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
         objectFit="cover"
