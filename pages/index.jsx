@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Row from '../components/Row';
 import Info from '../components/Info';
 import { useState } from 'react';
-import requests from './utils/requests';
+import requests from '../utils/requests';
 import CartInfo from '../components/CartInfo';
 
 // async function con() {
