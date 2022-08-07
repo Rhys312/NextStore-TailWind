@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --primary-teal: #76BA99;
+    --primary-dark-brown: #876445;
+    --primary-medium-brown: #CA955C;
+    --primary-light-brown: #EDDFB3
+}
+
+@layer base {
+    body {
+        @apply bg-slate-200
+    }
+}
+
+@layer components {
+    .labelStyle {
+        @apply text-primary-dark-brown font-bold text-xl
+    }
+
+    .inputStyle {
+        @apply rounded-md px-4 py-2 outline-none
+    }
+
+    .buttonCart {
+        @apply flex h-4 items-center justify-center border-primary-teal border-solid border-2 rounded-md py-4 px-4 text-2xl text-primary-dark-brown
+    }
+}
