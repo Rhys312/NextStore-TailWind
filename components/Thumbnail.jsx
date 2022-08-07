@@ -7,7 +7,7 @@ const Thumbnail = ({ onShow, movie }) => {
   const thumbnailCtx = useContext(ThumbnailContext);
 
   async function getMovieFromThumbnail() {
-    // if (!movie) return;
+    onShow();
 
     const data = await fetch(
       `http://api.themoviedb.org/3/${
@@ -27,9 +27,6 @@ const Thumbnail = ({ onShow, movie }) => {
       const trailer = data.videos?.results[index]?.key;
       thumbnailCtx.trailer = trailer;
     }
-
-    
-    onShow();
   }
 
   return (
