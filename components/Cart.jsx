@@ -8,8 +8,6 @@ const Cart = ({ onShow }) => {
   const [isClicked, setIsClicked] = useState(false);
   const infoCtx = useContext(InfoContext);
 
- 
-
   return (
     <React.Fragment>
       {isClicked && <CartInfo />}

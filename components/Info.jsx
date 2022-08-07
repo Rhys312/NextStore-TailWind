@@ -1,6 +1,6 @@
 import Modal from '../components/Modal';
 import React, { useState, useContext, useRef } from 'react';
-import ReactPlayer from 'react-player/lazy';
+import ReactPlayer from 'react-player';
 import Comments from '../components/Comments';
 import InfoContext from '../store/InfoProvider';
 import ThumbnailContext from '../store/ThumbnailProvider';
@@ -30,7 +30,6 @@ const Info = (props) => {
       document.getElementById('ticketNum').stepDown();
       setTicketNum((prev) => {
         if (prev < 2) return;
-
         return prev - 1;
       });
     }
