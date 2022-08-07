@@ -10,4 +10,5 @@ const Header = ({ netflixOriginals, onShow }) => {
   );
 };
 
+
 export default Header;
