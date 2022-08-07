@@ -28,6 +28,7 @@ const Thumbnail = ({ onShow, movie }) => {
       thumbnailCtx.trailer = trailer;
     }
 
+    
     onShow();
   }
 
