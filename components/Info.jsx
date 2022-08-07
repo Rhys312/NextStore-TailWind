@@ -1,5 +1,5 @@
-import Modal from '../components/Modal';
 import React, { useState, useContext, useRef } from 'react';
+import Modal from '../components/Modal';
 import ReactPlayer from 'react-player';
 import Comments from '../components/Comments';
 import InfoContext from '../store/InfoProvider';
