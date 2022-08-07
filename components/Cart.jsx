@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineShoppingCart } from 'react-icons/Ai';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useContext, useState } from 'react';
 import InfoContext from '../store/InfoProvider';
 import CartInfo from '../components/CartInfo';

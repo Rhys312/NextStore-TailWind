@@ -1,5 +1,5 @@
 import React from 'react';
-import { VscAccount } from 'react-icons/Vsc';
+import { VscAccount } from 'react-icons/vsc';
 
 const Account = () => {
 

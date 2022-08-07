@@ -12,8 +12,8 @@ import {
   AiOutlineCheckCircle,
   AiFillLike,
   AiOutlinePauseCircle,
-} from 'react-icons/Ai';
-import { HiOutlineVolumeUp, HiOutlineVolumeOff } from 'react-icons/Hi';
+} from 'react-icons/ai';
+import { HiOutlineVolumeUp, HiOutlineVolumeOff } from 'react-icons/hi';
 
 const Info = (props) => {
   const [ticketNum, setTicketNum] = useState(1);

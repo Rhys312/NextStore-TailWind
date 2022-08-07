@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsSearch } from 'react-icons/Bs';
+import { BsSearch } from 'react-icons/bs';
 import { useState } from 'react';
 
 const Search = ({ isScrolled }) => {
