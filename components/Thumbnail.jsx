@@ -26,8 +26,9 @@ const Thumbnail = ({ onShow, movie }) => {
       );
       const trailer = data.videos?.results[index]?.key;
       thumbnailCtx.trailer = trailer;
-      onShow();
     }
+
+    onShow();
   }
 
   return (
