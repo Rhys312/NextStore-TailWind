@@ -19,7 +19,7 @@ const Thumbnail = ({ onShow, movie }) => {
       .then((res) => res.json())
       .catch((err) => console.log(err));
 
-    thumbnailCtx.title = data.original_title
+    thumbnailCtx.title = data?.original_title
       ? data.original_title
       : data.original_name;
     thumbnailCtx.id = data.id;
