@@ -7,6 +7,10 @@ import CartInfo from '../components/CartInfo';
 const Cart = ({ onShow }) => {
   const [isClicked, setIsClicked] = useState(false);
   const infoCtx = useContext(InfoContext);
+  // const movies = infoCtx.movies;
+  // const totalTicket = movies.reduce((total, movie) => {
+  //   return total + movie.ticketNum;
+  // }, 0);
 
   return (
     <React.Fragment>

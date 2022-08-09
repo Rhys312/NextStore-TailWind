@@ -2,19 +2,10 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Row from '../components/Row';
 import Info from '../components/Info';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import requests from '../utils/requests';
 import CartInfo from '../components/CartInfo';
-
-// async function con() {
-//   const x = await fetch(requests.fetchNetflixOriginals).then((res) =>
-//     res.json()
-//   );
-
-//   console.log(x);
-// }
-
-// con();
+import InfoContext from '../store/InfoProvider';
 
 const Home = ({
   netflixOriginals,
@@ -26,6 +17,9 @@ const Home = ({
   romanceMovies,
   documentaries,
 }) => {
+  const infoCtx = useContext(InfoContext);
+  
+  
   const [isModalShown, setIsModalShown] = useState(false);
   const [isModalCartShown, setIsModalCartShown] = useState(false);
 

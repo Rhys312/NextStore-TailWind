@@ -7,20 +7,13 @@ const TICKET_PRICE = 5;
 const CartInfo = ({ onClose }) => {
   const infoCtx = useContext(InfoContext);
   const movies = infoCtx.movies;
-  const totalCost = movies.reduce((total, movie) => {
-    return total + movie.ticketNum * TICKET_PRICE;
+  const totalTicket = movies.reduce((total, movie) => {
+    return total + movie.ticketNum;
   }, 0);
 
-  // function removeTicketHandler(element) {}
-  // function addTicketHandler(element) {
-  //   const elementIndex = movies.findIndex((movie) => movie.id === element.id);
-  //   movies[elementIndex] = {
-  //     ...element,
-  //     ticketNum: element.ticketNum + 1,
-  //   };
+  const totalCost = totalTicket * TICKET_PRICE;
 
-  //   return movies;
-  // }
+  // function removeTicketHandler(element) {}
 
   return (
     <Modal onClose={onClose}>

@@ -17,6 +17,7 @@ const Banner = ({ netflixOriginals }) => {
         layout="fill"
         src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
         objectFit="cover"
+        
       />
     </div>
   );

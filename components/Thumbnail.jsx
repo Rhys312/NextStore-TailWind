@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Image from 'next/image';
 import { baseUrl } from '../constants/constants';
 import ThumbnailContext from '../store/ThumbnailProvider';
@@ -7,8 +7,6 @@ const Thumbnail = ({ onShow, movie }) => {
   const thumbnailCtx = useContext(ThumbnailContext);
 
   async function getMovieFromThumbnail() {
-    if (!movie) return;
-    console.log(movie);
     const data = await fetch(
       `https://api.themoviedb.org/3/${
         movie?.media_type === 'tv' ? 'tv' : 'movie'
@@ -31,7 +29,6 @@ const Thumbnail = ({ onShow, movie }) => {
       const trailer = data.videos?.results[index]?.key;
       thumbnailCtx.trailer = trailer;
     }
-
     onShow();
   }
 
