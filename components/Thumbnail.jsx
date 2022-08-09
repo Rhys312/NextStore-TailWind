@@ -8,8 +8,9 @@ const Thumbnail = ({ onShow, movie }) => {
 
   async function getMovieFromThumbnail() {
     if (!movie) return;
+    console.log(movie);
     const data = await fetch(
-      `http://api.themoviedb.org/3/${
+      `https://api.themoviedb.org/3/${
         movie?.media_type === 'tv' ? 'tv' : 'movie'
       }/${movie?.id}?api_key=${
         process.env.NEXT_PUBLIC_API_KEY
@@ -18,7 +19,9 @@ const Thumbnail = ({ onShow, movie }) => {
       .then((res) => res.json())
       .catch((err) => console.log(err));
 
-    thumbnailCtx.title = data.original_title || data.original_name;
+    thumbnailCtx.title = data.original_title
+      ? data.original_title
+      : data.original_name;
     thumbnailCtx.id = data.id;
 
     if (data?.videos) {
