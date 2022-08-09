@@ -1,12 +1,33 @@
-import React from 'react';
-import MuiPicker from '../../components/MuiPicker';
+import React, { useContext, useRef } from 'react';
 import Link from 'next/link';
+import InfoContext from '../../store/InfoProvider';
 
 const Booking = () => {
+  const infoCtx = useContext(InfoContext);
+  const nameInputRef = useRef();
+  const phoneInputRef = useRef();
+  const emailInputRef = useRef();
+
+  const submitInfoHandler = (e) => {
+    e.preventDefault();
+    const info = {
+      name: nameInputRef.current.value,
+      email: emailInputRef.current.value,
+      phone: phoneInputRef.current.value,
+      movies: infoCtx.movies,
+      totalCost: infoCtx.totalCost,
+    };
+
+    console.log(info);
+  };
+
   return (
     <div className=" ">
       <div className="absolute z-[20] w-screen h-screen flex flex-col items-center justify-center  rounded-md p-12 ">
-        <form className="flex flex-col rounded-md w-80 bg-slate-500 py-4 px-6">
+        <form
+          onSubmit={(e) => submitInfoHandler(e)}
+          className="flex flex-col rounded-md w-80 bg-primary-light-brown py-4 px-6 space-y-2"
+        >
           <label className="labelStyle" htmlFor="name">
             Name
           </label>
@@ -15,15 +36,17 @@ const Booking = () => {
             type="text"
             id="name"
             placeholder="Enter your name..."
+            ref={nameInputRef}
           ></input>
-          <label className="labelStyle" htmlFor="address">
+          <label className="labelStyle" htmlFor="email">
             Email address
           </label>
           <input
             className="inputStyle"
             type="text"
-            id="address"
+            id="email"
             placeholder="Enter your email address..."
+            ref={emailInputRef}
           ></input>
           <label className="labelStyle" htmlFor="phone">
             Phone number
@@ -33,32 +56,15 @@ const Booking = () => {
             type="text"
             id="phone"
             placeholder="Enter your phone number..."
+            ref={phoneInputRef}
           ></input>
-          <label className="labelStyle">Time</label>
-          <MuiPicker />
           <div>
-            <label className="labelStyle py-2">No. of tickets</label>
-            <div className="flex items-center justify-between">
-              <input
-                type={'number'}
-                step="1"
-                defaultValue={'1'}
-                className="inputStyle w-[60%]"
-              />
-              <button className="flex w-4 h-4 bg-primary-teal  items-center justify-center text-white px-4 py-4">
-                +
-              </button>
-              <button className="flex w-4 h-4 items-center justify-center bg-red-600 text-white px-4 py-4">
-                -
-              </button>
-            </div>
-            <div>
-              <Link href="/order/87687768">
-                <button className=" my-4 bg-primary-dark-brown w-full text-white py-2 rounded-md">
-                  Buy
-                </button>
-              </Link>
-            </div>
+            <button
+              type="submit"
+              className=" my-4 bg-primary-teal w-full hover:bg-teal-500 text-white py-2 rounded-md"
+            >
+              Buy
+            </button>
           </div>
         </form>
       </div>

@@ -24,10 +24,10 @@ const MuiPicker = () => {
               //   '&:hover .MuiOutlinedInput-notchedOutline': {
               //     borderColor: 'red',
               //   },
-           
+              outlined: 'none',
 
               '& .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'green',
+                borderColor: 'none',
               },
 
               '& .Mui-focused .MuiOutlinedInput-notchedOutline': {

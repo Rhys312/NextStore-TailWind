@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Modal from '../components/Modal';
 import InfoContext from '../store/InfoProvider';
+import Link from 'next/link';
 
 const TICKET_PRICE = 5;
 
@@ -61,9 +62,11 @@ const CartInfo = ({ onClose }) => {
             >
               Close
             </button>
-            <button className="buttonCart rounded-2xl bg-primary-teal text-white ">
-              Order
-            </button>
+            <Link href="/booking">
+              <button className="buttonCart rounded-2xl bg-primary-teal text-white ">
+                Order
+              </button>
+            </Link>
           </div>
         </div>
       </div>

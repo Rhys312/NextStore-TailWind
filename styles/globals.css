@@ -17,11 +17,11 @@
 
 @layer components {
     .labelStyle {
-        @apply text-primary-dark-brown font-bold text-xl
+        @apply text-red-500 font-bold text-sm
     }
 
     .inputStyle {
-        @apply rounded-md px-4 py-2 outline-none
+        @apply  px-4 py-2 outline-none border-b-primary-teal border-b-4
     }
 
     .buttonCart {
