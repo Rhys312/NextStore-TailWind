@@ -18,26 +18,8 @@ const Home = ({
   documentaries,
 }) => {
   const infoCtx = useContext(InfoContext);
-  
-  
-  const [isModalShown, setIsModalShown] = useState(false);
-  const [isModalCartShown, setIsModalCartShown] = useState(false);
-
-  const showModal = () => {
-    setIsModalShown(true);
-  };
-
-  const hideModal = () => {
-    setIsModalShown(false);
-  };
-
-  const hideCartModal = () => {
-    setIsModalCartShown(false);
-  };
-
-  const showCartModal = () => {
-    setIsModalCartShown(true);
-  };
+  const modalState = infoCtx.modalState;
+  const modalCartState = infoCtx.modalCartState;
 
   return (
     <div>
@@ -45,13 +27,13 @@ const Home = ({
         <title>NextStore</title>
       </Head>
       <main className="flex flex-col">
-        {isModalShown && <Info onClose={hideModal} />}
-        {isModalCartShown && <CartInfo onClose={hideCartModal} />}
+        {modalState && <Info />}
+        {modalCartState && <CartInfo />}
         <div className="flex">
-          <Header netflixOriginals={netflixOriginals} onShow={showCartModal} />
+          <Header netflixOriginals={netflixOriginals} />
         </div>
         <div className="flex overflow-hidden">
-          <Row movies={trendingNow} onShow={showModal} />
+          <Row movies={trendingNow} />
         </div>
       </main>
     </div>

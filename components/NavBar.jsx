@@ -3,9 +3,9 @@ import Link from 'next/link';
 import Cart from '../components/Cart';
 import Search from '../components/Search';
 import Account from '../components/Account';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
-const NavBar = ({ onShow }) => {
+const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -46,12 +46,11 @@ const NavBar = ({ onShow }) => {
 
       <div className="flex flex-row items-center space-x-4 ">
         <Search isScrolled={isScrolled} />
-        <Cart onShow={onShow} />
+        <Cart />
         <Account />
       </div>
     </div>
   );
 };
-
 
 export default NavBar;

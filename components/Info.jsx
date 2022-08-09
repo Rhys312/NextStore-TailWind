@@ -21,7 +21,6 @@ const Info = (props) => {
   const [muted, setMuted] = useState(false);
   const [liked, setLiked] = useState(false);
   const [played, setPlayed] = useState(false);
-  const [closeModal, setCloseModal] = useState(false);
   const ticketNumInputRef = useRef();
   const infoCtx = useContext(InfoContext);
   const thumbnailCtx = useContext(ThumbnailContext);
@@ -142,8 +141,8 @@ const Info = (props) => {
             <div className=" flex flex-col h-[100%] justify-end">
               <button
                 onClick={() => {
-                  setCloseModal(true);
                   infoCtx.addTicket(ticketNum);
+                  infoCtx.handleState(false);
                 }}
                 className="buttonCart rounded-2xl bg-primary-teal text-white text-base"
               >

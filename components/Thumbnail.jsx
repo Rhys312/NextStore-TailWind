@@ -2,9 +2,11 @@ import React, { useContext, useEffect } from 'react';
 import Image from 'next/image';
 import { baseUrl } from '../constants/constants';
 import ThumbnailContext from '../store/ThumbnailProvider';
+import InfoContext from '../store/InfoProvider';
 
-const Thumbnail = ({ onShow, movie }) => {
+const Thumbnail = ({ movie }) => {
   const thumbnailCtx = useContext(ThumbnailContext);
+  const infoCtx = useContext(InfoContext);
 
   async function getMovieFromThumbnail() {
     const data = await fetch(
@@ -29,7 +31,8 @@ const Thumbnail = ({ onShow, movie }) => {
       const trailer = data.videos?.results[index]?.key;
       thumbnailCtx.trailer = trailer;
     }
-    onShow();
+
+    infoCtx.handleState(true);
   }
 
   return (

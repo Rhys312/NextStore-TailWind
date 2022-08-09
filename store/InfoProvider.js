@@ -8,7 +8,9 @@ const InfoContext = React.createContext({
   addTicket: () => {},
   addTicketInsideCart: () => {},
   removeTicketInsideCart: () => {},
-  hideModal: null,
+  modalState: null,
+  handleState: () => {},
+  handleCartState: () => {},
 });
 
 export const InfoProvider = (props) => {
@@ -20,8 +22,29 @@ export const InfoProvider = (props) => {
     addTicket: (element) => addTicketHandler(element),
     addTicketInsideCart: (element) => addTicketInsideCart(element),
     removeTicketInsideCart: (element) => removeTicketInsideCart(element),
-    hideModal: null,
+    modalState: null,
+    modalCartState: null,
+    handleState: (state) => handleState(state),
+    handleCartState: (state) => handleCartState(state),
   });
+
+  const handleState = (state) => {
+    setInfoCtx((prev) => {
+      return {
+        ...prev,
+        modalState: state,
+      };
+    });
+  };
+
+  const handleCartState = (state) => {
+    setInfoCtx((prev) => {
+      return {
+        ...prev,
+        modalCartState: state,
+      };
+    });
+  };
 
   const addTicketHandler = (ticketNum) => {
     setInfoCtx((prev) => {

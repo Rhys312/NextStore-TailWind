@@ -1,10 +1,17 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, useContext } from 'react';
 import ReactDOM from 'react-dom';
 
-const Backdrop = (props) => {
+import InfoContext from '../store/InfoProvider';
+
+const Backdrop = () => {
+  const infoCtx = useContext(InfoContext);
+
   return (
     <div
-      onClick={props.onClose}
+      onClick={() => {
+        infoCtx.handleState(false);
+        infoCtx.handleCartState(false);
+      }}
       className=" cursor-pointer fixed top-0 left-0 w-screen z-[10000] h-[100vh] bg-slate-400 opacity-50 "
     />
   );
