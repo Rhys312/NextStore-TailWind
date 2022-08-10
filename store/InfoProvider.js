@@ -60,12 +60,12 @@ export const InfoProvider = (props) => {
     });
   };
 
-  let updatedMovies = [...infoCtx.movies];
-  let updatedNumOfTicket = infoCtx.numOfTicket;
-
   const addTicketInsideCart = (element) => {
     setInfoCtx((prev) => {
-      const elementIndex = prev.movies.findIndex(
+      let updatedMovies = [...prev.movies];
+      let updatedNumOfTicket = prev.numOfTicket;
+
+      const elementIndex = updatedMovies.findIndex(
         (movie) => movie.id === element.id
       );
 
@@ -88,11 +88,13 @@ export const InfoProvider = (props) => {
 
   const removeTicketInsideCart = (element) => {
     setInfoCtx((prev) => {
-      const elementIndex = prev.movies.findIndex(
+      let updatedMovies = [...prev.movies];
+      let updatedNumOfTicket = prev.numOfTicket;
+      const elementIndex = updatedMovies.findIndex(
         (movie) => movie.id === element.id
       );
 
-      if (element.ticketNum == 1) {
+      if (element.ticketNum === 1) {
         updatedMovies = updatedMovies.filter(
           (movie) => movie.id !== element.id
         );
